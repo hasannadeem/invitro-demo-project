@@ -1,116 +1,94 @@
 # Doctor Appointment Booking UI
 
-A responsive and accessible doctor appointment booking interface built with React and Tailwind CSS.
+A responsive and accessible doctor booking UI module built with React.
 
-## 🚀 Features
+## Features
 
-- 👨‍⚕️ Doctor directory with filtering capabilities
-- 📅 Interactive appointment booking system
-- 📱 Fully responsive design (mobile, tablet, desktop)
-- 🎨 Modern UI with Tailwind CSS
-- ⌨️ Full keyboard navigation support
+- **Doctor Directory View**
 
-## 🛠️ Tech Stack
+  - List of doctors with details (name, photo, specialty, availability, location)
+  - Filter by specialty and availability
+  - Book appointment button on each card
+  - Expandable doctor details section
 
-- React 19.1.0
-- Tailwind CSS 3.4.17
-- Heroicons 2.2.0
-- Modern JavaScript (ES6+)
+- **Booking Modal**
 
-## 🚀 Getting Started
+  - Opens when "Book Appointment" is clicked
+  - Shows doctor name and available time slots
+  - Allows selecting a time slot and confirming
 
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd doctor-booking-ui
-   ```
+- **Appointments Summary View**
+  - Shows booked appointments
+  - Displays doctor, specialty, date/time, and location
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## Tech Stack
 
-3. **Start the development server**
-   ```bash
-   npm start
-   ```
+- React (with Hooks)
+- JavaScript
+- Tailwind CSS
+- Jest and React Testing Library
 
-4. **Open the application**
-   Visit `http://localhost:3000` in your browser
+## Setup Instructions
 
-In the project directory, you can run:
+1. Clone the repository
 
+```bash
+git clone <repository-url>
+cd doctor-booking-ui
+```
 
-### `npm test`
+2. Install dependencies
 
-Launches the test runner in the interactive watch mode.\
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start the development server
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm start
+```
 
-## 🤖 AI Tools Usage
+4. Run tests
 
-This project was developed with the assistance of AI tools:
+```bash
+npm test
+```
 
-- **Claude AI**: Used for:
-  - Component architecture design
-  - Code review and optimization suggestions
+## Accessibility Features
 
+This application was built with accessibility in mind:
 
-## 🎯 Key Components
+- Proper semantic HTML elements
+- ARIA attributes for improved screen reader experience
+- Keyboard navigation support
+- Focus management in modal dialogs
+- Color contrast compliance
+- Responsive design for all screen sizes
 
-### Doctor Directory
-- Filterable list of doctors
-- Individual doctor cards with key information
-- Rating display
-- Availability indicators
+## AI Tools Used
 
-### Filtering System
-- Filter by medical specialty
-- Filter by availability/day
-- Quick filters for immediate availability
-- Clear filter option
+The following AI tools were used to accelerate development:
 
-### Booking Modal
-- Available time slot selection
-- Keyboard accessible
+- **Claude AI via Cursor**: For code suggestions and component scaffolding
+- **Jest-axe**: For automated accessibility testing
+- **React Testing Library**: For component testing with accessibility in mind
 
-### Appointments View
-- List of confirmed appointments
-- Appointment details display
+## Performance Optimizations
 
-## 📱 Responsive Design
+- React.memo for component memoization
+- useMemo for expensive computations
+- useCallback for stable function references
+- Lazy loading images with loading="lazy"
+- Optimized rendering with conditional rendering
+- State management with proper React hooks
 
-The UI adapts to different screen sizes:
+## Future Improvements
 
-- **Mobile**:
-- **Tablet**:
-- **Desktop**:
-
-## 🔄 State Management
-
-- Local React state for UI components
-- Filtered data handling
-
-## 🚧 Known Limitations & Future Improvements
-
-1. **Current Limitations**
-   - Mock data only (no backend integration)
-   - No persistence (appointments reset on refresh)
-
-2. **Planned Improvements**
-   - Backend integration
-   - User authentication
-   - Calendar view for availability
-   - Doctor search functionality
-   - Appointment cancellation feature
-
-## 📝 Development Notes
-
-### Code Style
-- Functional components
-- Modern React practices
-- Tailwind CSS utility classes
-- Consistent naming conventions
+- Add pagination for large doctor lists
+- Implement a more robust state management solution (Zustand/Redux)
+- Add date selection to booking modal
+- Implement form validation for user inputs
+- Add search functionality
+- Add appointment cancellation feature
+- Implement animations for smoother UI transitions

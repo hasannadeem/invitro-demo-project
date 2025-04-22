@@ -1,13 +1,21 @@
+const today = new Date();
+const currentDay = today.toLocaleDateString("en-US", { weekday: "long" });
+const formattedToday = today.toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
 export const availableDays = [
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 
-const today = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+const isAvailableToday = (availability) => availability.includes(currentDay);
 
 export const doctors = [
   {
@@ -17,12 +25,17 @@ export const doctors = [
     specialty: "Cardiologist",
     rating: 4.8,
     availability: ["Monday", "Wednesday", "Friday"],
-    availableToday: today === "Monday" || today === "Wednesday" || today === "Friday",
+    availableToday: isAvailableToday(["Monday", "Wednesday", "Friday"]),
     location: "New York Medical Center",
+    bio: "Specialized in cardiovascular health with over 10 years of experience",
     timeSlots: [
-      "09:00 AM", "10:00 AM", "11:00 AM",
-      "02:00 PM", "03:00 PM", "04:00 PM"
-    ]
+      "09:00 AM",
+      "10:00 AM",
+      "11:00 AM",
+      "02:00 PM",
+      "03:00 PM",
+      "04:00 PM",
+    ],
   },
   {
     id: 2,
@@ -31,11 +44,17 @@ export const doctors = [
     specialty: "Dermatologist",
     rating: 4.9,
     availability: ["Tuesday", "Thursday", "Saturday"],
+    availableToday: isAvailableToday(["Tuesday", "Thursday", "Saturday"]),
     location: "Downtown Clinic",
+    bio: "Expert in skin disorders and cosmetic dermatology",
     timeSlots: [
-      "09:30 AM", "10:30 AM", "11:30 AM",
-      "02:30 PM", "03:30 PM", "04:30 PM"
-    ]
+      "09:30 AM",
+      "10:30 AM",
+      "11:30 AM",
+      "02:30 PM",
+      "03:30 PM",
+      "04:30 PM",
+    ],
   },
   {
     id: 3,
@@ -44,11 +63,17 @@ export const doctors = [
     specialty: "Pediatrician",
     rating: 4.7,
     availability: ["Monday", "Tuesday", "Thursday"],
+    availableToday: isAvailableToday(["Monday", "Tuesday", "Thursday"]),
     location: "Children's Medical Center",
+    bio: "Dedicated to providing compassionate care for children of all ages",
     timeSlots: [
-      "08:00 AM", "09:00 AM", "10:00 AM",
-      "01:00 PM", "02:00 PM", "03:00 PM"
-    ]
+      "08:00 AM",
+      "09:00 AM",
+      "10:00 AM",
+      "01:00 PM",
+      "02:00 PM",
+      "03:00 PM",
+    ],
   },
   {
     id: 4,
@@ -57,12 +82,94 @@ export const doctors = [
     specialty: "Orthopedist",
     rating: 4.6,
     availability: ["Wednesday", "Friday", "Saturday"],
+    availableToday: isAvailableToday(["Wednesday", "Friday", "Saturday"]),
     location: "Sports Medicine Clinic",
+    bio: "Specializing in sports injuries and joint replacements",
     timeSlots: [
-      "10:00 AM", "11:00 AM", "12:00 PM",
-      "03:00 PM", "04:00 PM", "05:00 PM"
-    ]
-  }
+      "10:00 AM",
+      "11:00 AM",
+      "12:00 PM",
+      "03:00 PM",
+      "04:00 PM",
+      "05:00 PM",
+    ],
+  },
+  {
+    id: 5,
+    name: "Dr. Rebecca Washington",
+    photo: "https://randomuser.me/api/portraits/women/65.jpg",
+    specialty: "Neurologist",
+    rating: 4.9,
+    availability: ["Monday", "Tuesday", "Friday"],
+    availableToday: isAvailableToday(["Monday", "Tuesday", "Friday"]),
+    location: "Neuroscience Institute",
+    bio: "Leading expert in neurological disorders with cutting-edge treatment approaches",
+    timeSlots: [
+      "08:30 AM",
+      "09:30 AM",
+      "10:30 AM",
+      "01:30 PM",
+      "02:30 PM",
+      "03:30 PM",
+    ],
+  },
+  {
+    id: 6,
+    name: "Dr. David Kim",
+    photo: "https://randomuser.me/api/portraits/men/67.jpg",
+    specialty: "Ophthalmologist",
+    rating: 4.7,
+    availability: ["Wednesday", "Thursday", "Saturday"],
+    availableToday: isAvailableToday(["Wednesday", "Thursday", "Saturday"]),
+    location: "Vision Care Center",
+    bio: "Specialized in LASIK surgery and treatment of eye diseases",
+    timeSlots: [
+      "09:00 AM",
+      "10:00 AM",
+      "11:00 AM",
+      "02:00 PM",
+      "03:00 PM",
+      "04:00 PM",
+    ],
+  },
+  {
+    id: 7,
+    name: "Dr. Jennifer Taylor",
+    photo: "https://randomuser.me/api/portraits/women/22.jpg",
+    specialty: "Endocrinologist",
+    rating: 4.8,
+    availability: ["Monday", "Thursday", "Friday"],
+    availableToday: isAvailableToday(["Monday", "Thursday", "Friday"]),
+    location: "Diabetes & Hormone Center",
+    bio: "Expert in diabetes management and hormone-related conditions",
+    timeSlots: [
+      "09:15 AM",
+      "10:15 AM",
+      "11:15 AM",
+      "02:15 PM",
+      "03:15 PM",
+      "04:15 PM",
+    ],
+  },
+  {
+    id: 8,
+    name: "Dr. Robert Garcia",
+    photo: "https://randomuser.me/api/portraits/men/55.jpg",
+    specialty: "Cardiologist",
+    rating: 4.5,
+    availability: ["Tuesday", "Wednesday", "Saturday"],
+    availableToday: isAvailableToday(["Tuesday", "Wednesday", "Saturday"]),
+    location: "Heart & Vascular Institute",
+    bio: "Focusing on preventive cardiology and heart health",
+    timeSlots: [
+      "08:45 AM",
+      "09:45 AM",
+      "10:45 AM",
+      "01:45 PM",
+      "02:45 PM",
+      "03:45 PM",
+    ],
+  },
 ];
 
 export const specialties = [
@@ -70,5 +177,10 @@ export const specialties = [
   "Cardiologist",
   "Dermatologist",
   "Pediatrician",
-  "Orthopedist"
+  "Orthopedist",
+  "Neurologist",
+  "Ophthalmologist",
+  "Endocrinologist",
 ];
+
+export const currentDate = formattedToday;
